@@ -10,8 +10,8 @@ Creating a neural network to detect malaria-infected cells involves training it 
 
 ## Neural Network Model
 
+![image](https://github.com/poojaanbu0/malaria-cell-recognition/assets/119390329/238b2a89-7070-4552-85ff-b74e10cb99b8)
 
-Include the neural network model diagram.
 
 ## DESIGN STEPS
 
@@ -33,7 +33,7 @@ Include the neural network model diagram.
 
 ### Register Number:212222240072
 
-```
+```python
 import tensorflow as tf
 # to share the GPU resources for multiple sessions
 from tensorflow.compat.v1.keras.backend import set_session
@@ -69,8 +69,8 @@ os.listdir(train_path+'/parasitized')[0]
 para_img= imread(train_path+
                  '/parasitized/'+
                  os.listdir(train_path+'/parasitized')[0])
-print("RAMA E.K. LEKSHMI")
-print("212222240082")
+print("POOJA A")
+print("212222240072")
 plt.imshow(para_img)
 # Checking the image dimensions
 dim1 = []
@@ -135,21 +135,21 @@ results = model.fit(train_image_gen,epochs=2,
                              )
 model.save('cell_model.h5')
 losses = pd.DataFrame(model.history.history)
-print("RAMA E.K. LEKSHMI")
-print("212222240082")
+print("POOJA A")
+print("212222240072")
 losses[['loss','val_loss']].plot()
 model.metrics_names
-print("RAMA E.K. LEKSHMI")
-print("212222240082")
+print("POOJA A")
+print("212222240072")
 model.evaluate(test_image_gen)
 pred_probabilities = model.predict(test_image_gen)
 test_image_gen.classes
 predictions = pred_probabilities > 0.5
-print("RAMA E.K. LEKSHMI")
-print("212222240082")
+print("POOJA A")
+print("212222240072")
 print(classification_report(test_image_gen.classes,predictions))
-print("RAMA E.K. LEKSHMI")
-print("212222240082")
+print("POOJA A")
+print("212222240072")
 confusion_matrix(test_image_gen.classes,predictions)
 ```
 
@@ -157,19 +157,23 @@ confusion_matrix(test_image_gen.classes,predictions)
 
 ### Training Loss, Validation Loss Vs Iteration Plot
 
-Include your plot here
+![image](https://github.com/poojaanbu0/malaria-cell-recognition/assets/119390329/cb2a2d20-7ee5-4dbb-b039-c7cf2e25d5b3)
+
 
 ### Classification Report
 
-Include Classification Report here
+![image](https://github.com/poojaanbu0/malaria-cell-recognition/assets/119390329/9c60a26e-4a9f-43aa-8a3e-4128da607db8)
+
 
 ### Confusion Matrix
 
-Include confusion matrix here
+![image](https://github.com/poojaanbu0/malaria-cell-recognition/assets/119390329/d878e07e-33aa-4f5b-87fd-318aac6559bd)
+
 
 ### New Sample Data Prediction
 
-Include your sample cell image input and output of your model.
+![image](https://github.com/poojaanbu0/malaria-cell-recognition/assets/119390329/d4ac47ee-3137-4fbe-9edb-6ec6a4b6ea6f)
+
 
 ## RESULT
 Thus a deep neural network for Malaria infected cell recognition is successfully developed and the performance is analyzed.
